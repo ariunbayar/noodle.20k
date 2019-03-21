@@ -1,0 +1,21 @@
+{% extends "layout_admin.html" %}
+
+{% block "content" %}
+
+<h5> {{ post.title }} </h5>
+
+<div>
+    {{ post.content_html|safe }}
+</div>
+
+<div>
+    {% if post.is_published %}
+    <a href="{% url "entry-unpublish" post.id %}" class="btn red">Нийтэлсэнийг нуух</a>
+    {% else %}
+    <a href="{% url "entry-publish" post.id %}" class="btn">Нийтлэх</a>
+    {% endif %}
+    <a href="{% url "entry-edit" post.id %}" class="btn">Засах</a>
+    <a href="{% url "entry-delete" post.id %}" class="btn red" onclick="return confirm('Delete?')">Delete</a>
+</div>
+
+{% endblock %}

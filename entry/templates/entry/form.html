@@ -1,0 +1,16 @@
+{% extends "layout_admin.html" %}
+
+{% block "content" %}
+
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.title.errors }}
+    {{ form.title }}
+    {{ form.content.errors }}
+    <textarea cols="74" rows="20" name="content">{{ post.content }}</textarea>
+
+    Мэдээллээ оруулсаны дараагаар "нийтлэх" сонголт идэвхижнэ.
+    <input type="submit" value="Хадгалах" class="btn"/>
+</form>
+
+{% endblock %}

@@ -1,0 +1,267 @@
+body{
+    background-color: #37474F;
+}
+
+body, input, textarea{
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-size: 1.2rem;
+    /*line-height: 2.2rem;*/
+    line-height: 1.6rem;
+    font-weight: 300;
+    color: #455a64;
+}
+
+
+input, textarea{
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 300;
+    padding: .2rem 1.2rem;
+}
+
+
+.header-wrapper .header,
+.content-wrapper .content,
+.footer-wrapper .footer {
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, .85);
+}
+
+.header-wrapper .header{
+    width: 800px;
+}
+.content-wrapper .content {
+    width: 760px;
+    padding: 20px;
+}
+.footer-wrapper .footer {
+    margin-top: 1rem;
+    width: 760px;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #e91e63;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+
+::-moz-selection {
+    color: #262727;
+    background-color: #dfc48c;
+}
+::selection {
+    color: #262727;
+    background-color: #dfc48c;
+}
+
+
+/**
+ * Menu
+ */
+ul.menu {
+    list-style-type: none;
+    margin: 0 0 1rem 0;
+    padding: 0;
+    font-weight: 700;
+}
+
+ul.menu li {
+    display: inline-block;
+    vertical-align: top;
+}
+ul.menu li a {
+    display: block;
+    padding: 0 16px;
+    text-align: center;
+    color: #455a64;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 1rem;
+    vertical-align: top;
+    height: 42px;
+    line-height: 42px;
+    /*
+    transition:
+        background-color .15s ease-in-out,
+        color .15s ease-in-out;
+    */
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+}
+
+ul.menu li a.logo {
+    background-color: #e91e63;
+    color: white;
+    font-size: 1.8rem;
+}
+ul.menu li a.active {
+    border-bottom-color: #455a64;
+}
+
+ul.menu li a:hover {
+    color: white;
+    background-color: #455a64
+}
+
+.ramen{
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAaCAYAAAC+aNwHAAAABmJLR0QA6QAeAGMehKBJAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wMPCyMiJFtwbgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAA+klEQVQ4y6VUyw3DIAx9IEZoODbzNJcM0YzFEM0l+3BsMoR7KamDbD6qJUQieM8P/wwR4R9znfdzb8b1XAaAfVwAAD4GrMMEW3K3j8sJEAgBgGyPfkamxqApoj4GhiDii973J6U9fUv/r9uDiOhUQCK74nkdJszHZgD8gii9LwHys/nYAIAuWdAuS+c8M47lmPZxgY8BaedgjdhJXmpqVIISQCN1zfnuaaYcyOu/iYAHs6bEljz7GKoBtXm75rJT3jVFtvZ+roJbKmcrDY2WNlYVtEa/SCABmkqZ94UGzMltTxVK8yCfSJfpJFmaRGmVesF8vVE2TC6Z+gBCANxvvYrbwQAAAABJRU5ErkJggg==");
+    width: 16px;
+    height: 26px;
+    display: inline-block;
+}
+
+td, th {
+    padding: .4rem 1.4rem;
+}
+
+a.card {
+    display: block;
+    min-height: 66px;
+    padding: 1rem 1rem;
+    box-shadow: 0 1px 2px 1px rgba(255,255,255,.07);
+    vertical-align: top;
+    transition: color .15s ease-in-out;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, .20);
+    line-height: 1.4rem;
+    font-weight: 300;
+    transition: background-color .15s ease-in-out;
+    box-shadow: 1px 1px 0px 0px rgba(0,0,0,.07);
+    position: relative;
+}
+
+a.card:hover {
+    background-color: rgba(255, 255, 255, .35);
+}
+
+a.card > .footer {
+    position: absolute;
+    bottom: 1rem;
+    font-size: .8rem;
+    text-align: right;
+    left: 0;
+    right: 0;
+    color: rgba(69, 90, 100, 0.5);
+    padding: 0 1rem;
+}
+
+a.card:nth-last-child(-n+3) {
+    margin-bottom: 1px;
+}
+
+
+/*
+ * Splits
+ */
+.split {
+    display: grid;
+    grid-gap: 0 24px;
+    grid-auto-rows: 1fr;
+    overflow-x: auto;
+}
+.split.no-stretch { grid-auto-rows: auto; }
+.split.no-stretch > * { align-self: start; }
+.split.row-gap { grid-row-gap: 24px; }
+
+.split.split2 { grid-template-columns: repeat(2, 1fr) }
+.split.split3 { grid-template-columns: repeat(3, 1fr) }
+.split.split4 { grid-template-columns: repeat(4, 1fr) }
+.split.split5 { grid-template-columns: repeat(5, 1fr) }
+.split.split6 { grid-template-columns: repeat(6, 1fr) }
+.split.split7 { grid-template-columns: repeat(7, 1fr) }
+.split.split8 { grid-template-columns: repeat(8, 1fr) }
+.split.split9 { grid-template-columns: repeat(9, 1fr) }
+.split.split10 { grid-template-columns: repeat(10, 1fr) }
+.split.split11 { grid-template-columns: repeat(11, 1fr) }
+.split.split12 { grid-template-columns: repeat(12, 1fr) }
+
+
+.split > .fullspan { grid-column: 1 / -1; }
+.split > .span2{ grid-column: span 2; }
+.split > .span3{ grid-column: span 3; }
+.split > .span4{ grid-column: span 4; }
+.split > .span5{ grid-column: span 5; }
+.split > .span6{ grid-column: span 6; }
+.split > .span7{ grid-column: span 7; }
+.split > .span8{ grid-column: span 8; }
+.split > .span9{ grid-column: span 9; }
+.split > .span10{ grid-column: span 10; }
+.split > .span11{ grid-column: span 11; }
+
+
+/*
+ * Button
+ */
+.btn{
+    font-family: "Fira Sans Extra Condensed";
+    font-size: 0.92em;
+}
+
+.btn{
+    display: inline-block;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    border-width: 0;
+    white-space: nowrap;
+    padding: 6px 24px;
+    line-height: 1.42857143;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #e0e3e4;
+    background-color: #607D8B;
+    box-shadow: 0px 2px 0 #546e7a;
+    text-decoration: none;
+    transition: background-color .2s ease-in-out, border-color .2s ease-in-out;
+    font-weight: 700;
+}
+
+
+.btn:hover {
+    color: #fff;
+    background-color: #78909C;
+    border-color: #607D8B;
+}
+
+.btn:focus {
+    outline: 0;
+    text-decoration: underline;
+}
+
+.btn:active{
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.125);
+}
+
+.btn.red{
+    background-color: #ad1457;
+    box-shadow: 0px 2px 0 #880E4F;
+}
+
+
+/**
+ * Code block
+ */
+pre {
+    color: #dfc48c;
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 4px;
+    font-size: 1rem;
+    word-spacing: normal;
+    margin: 1rem 0;
+    overflow-x: auto;
+    padding: 1rem;
+}
+

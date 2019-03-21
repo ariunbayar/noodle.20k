@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block "content" %}
+
+<h5> {{ post.title }} </h5>
+
+<div>
+    {{ post.content_html|safe }}
+</div>
+
+<hr/>
+
+Огноо: {{ post.created_at|date }}
+
+{% endblock %}

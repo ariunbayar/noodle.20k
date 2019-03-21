@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+
+{% block "content" %}
+<table>
+    <tbody>
+        {% for issue in issues %}
+        <tr>
+            <td>I{{ issue.id }}: {{ issue.name }} - {{ issue.created_at|date }}</td>
+            <td>
+                {% if issue.cost == 1 %}
+                <i class="ramen"></i>
+                {% elif issue.cost == 2 %}
+                <i class="ramen"></i> <i class="ramen"></i>
+                {% elif issue.cost == 3 %}
+                <i class="ramen"></i> <i class="ramen"></i> <i class="ramen"></i>
+                {% elif issue.cost == 4 %}
+                <i class="ramen"></i> <i class="ramen"></i> <i class="ramen"></i> <i class="ramen"></i>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+        <tr>
+            <td>I21: Queue mail to <a href="#">mailer over</a> KAPI - 2019-03-13</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td><a href="#">Edit page</a></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+{% endblock %}

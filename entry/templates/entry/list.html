@@ -1,0 +1,22 @@
+{% extends "layout_admin.html" %}
+
+{% block "content" %}
+
+{% for post in posts %}
+<div>
+    <h5>
+        <a href="{% url "entry-detail" post.id %}">
+            {% if not post.is_published %} Нийтлээгүй: {% endif %}
+            {{ post.title }}
+        </a>
+    </h5>
+    <div>
+        {{ post.content|linebreaksbr }}
+    </div>
+
+    <div>Огноо: {{ post.updated_at }} ({{ post.created_at }})</div>
+</div>
+<hr>
+{% endfor %}
+
+{% endblock %}
