@@ -128,5 +128,6 @@ STATICFILES_DIRS =[
 
 AUTH_USER_MODEL = 'user.User'
 
+LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'entry-list'
 LOGOUT_REDIRECT_URL = 'issues-list'
