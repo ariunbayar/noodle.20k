@@ -24,10 +24,11 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
-    'user.apps.UserConfig',
     'entry.apps.EntryConfig',
     'issues.apps.IssuesConfig',
     'lesson.apps.LessonConfig',
+    'secure.apps.SecureConfig',
+    'user.apps.UserConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -126,3 +127,6 @@ STATICFILES_DIRS =[
 
 
 AUTH_USER_MODEL = 'user.User'
+
+LOGIN_REDIRECT_URL = 'entry-list'
+LOGOUT_REDIRECT_URL = 'issues-list'

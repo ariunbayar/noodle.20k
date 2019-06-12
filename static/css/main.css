@@ -12,13 +12,6 @@ body, input, textarea{
 }
 
 
-input, textarea{
-    font-family: 'Fira Sans Extra Condensed', sans-serif;
-    font-weight: 300;
-    padding: .2rem 1.2rem;
-}
-
-
 .header-wrapper .header,
 .content-wrapper .content,
 .footer-wrapper .footer {
@@ -91,6 +84,9 @@ ul.menu li a {
     border-top: 4px solid transparent;
     border-bottom: 4px solid transparent;
 }
+ul.menu li.right {
+    float: right;
+}
 
 ul.menu li a.logo {
     background-color: #e91e63;
@@ -105,6 +101,7 @@ ul.menu li a:hover {
     color: white;
     background-color: #455a64
 }
+
 
 .ramen{
     background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAaCAYAAAC+aNwHAAAABmJLR0QA6QAeAGMehKBJAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4wMPCyMiJFtwbgAAAB1pVFh0Q29tbWVudAAAAAAAQ3JlYXRlZCB3aXRoIEdJTVBkLmUHAAAA+klEQVQ4y6VUyw3DIAx9IEZoODbzNJcM0YzFEM0l+3BsMoR7KamDbD6qJUQieM8P/wwR4R9znfdzb8b1XAaAfVwAAD4GrMMEW3K3j8sJEAgBgGyPfkamxqApoj4GhiDii973J6U9fUv/r9uDiOhUQCK74nkdJszHZgD8gii9LwHys/nYAIAuWdAuS+c8M47lmPZxgY8BaedgjdhJXmpqVIISQCN1zfnuaaYcyOu/iYAHs6bEljz7GKoBtXm75rJT3jVFtvZ+roJbKmcrDY2WNlYVtEa/SCABmkqZ94UGzMltTxVK8yCfSJfpJFmaRGmVesF8vVE2TC6Z+gBCANxvvYrbwQAAAABJRU5ErkJggg==");
@@ -265,3 +262,28 @@ pre {
     padding: 1rem;
 }
 
+
+/**
+ * Form
+ */
+.form-field{
+    margin: .5em 0;
+}
+
+
+
+input, textarea{
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+    font-weight: 300;
+    padding: .2rem 1.2rem;
+}
+
+.alert-error{
+    /*background-color: #c51162;*/
+    background-color: #e91e63;
+    padding: .5em 1.5em;
+    border-radius: 4px;
+    font-weight: 500;
+    color: #fff;
+    font-size: 1.0rem;
+}

@@ -1,7 +1,9 @@
 from django.urls import path
+
+import entry.views
 import issues.views
 import lesson.views
-import entry.views
+import secure.views
 
 
 urlpatterns = [
@@ -16,4 +18,7 @@ urlpatterns = [
     path('admin/entry/<int:pk>/delete/', entry.views.delete, name='entry-delete'),
     path('admin/entry/<int:pk>/publish/', entry.views.publish_toggle, name='entry-publish', kwargs={'is_published': True}),
     path('admin/entry/<int:pk>/unpublish/', entry.views.publish_toggle, name='entry-unpublish', kwargs={'is_published': False}),
+
+    path('login/', secure.views.login, name='login'),
+    path('logout/', secure.views.logout, name='logout'),
 ]
