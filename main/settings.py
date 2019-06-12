@@ -24,9 +24,11 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'user.apps.UserConfig',
     'entry.apps.EntryConfig',
     'issues.apps.IssuesConfig',
     'lesson.apps.LessonConfig',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -121,3 +123,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS =[
     os.path.join(BASE_DIR, "static")
 ]
+
+
+AUTH_USER_MODEL = 'user.User'
