@@ -1,6 +1,7 @@
 import random
 from collections import namedtuple
 from django.shortcuts import render
+from django.shortcuts import redirect
 from datetime import datetime, timedelta
 
 
