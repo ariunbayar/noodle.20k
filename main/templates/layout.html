@@ -13,10 +13,10 @@
     <div class="header-wrapper">
         <div class="header">
             <ul class="menu">
-                <li><a href="{% url "issues-list"%}" class="logo">Гоймондоо</a></li>
-                <li><a href="{% url "issues-list" %}" {% if request.resolver_match.url_name == "issues-list" %}class="active"{% endif %}>Гоймондоо</a></li>
+                <li><a href="{% url "lesson-list"%}" class="logo">Гоймондоо</a></li>
+                {% comment %}<li><a href="{% url "issues-list" %}" {% if request.resolver_match.url_name == "issues-list" %}class="active"{% endif %}>Гоймондоо</a></li>{% endcomment %}
                 <li><a href="{% url "lesson-list" %}" {% if request.resolver_match.url_name == "lesson-list" %}class="active"{% endif %}>Бэлэн гоймон</a></li>
-                <li><a href="#">Гоймонд дурлагсад</a></li>
+                {% comment %}<li><a href="#">Гоймонд дурлагсад</a></li>{% endcomment %}
             </ul>
         </div>
     </div>
@@ -29,9 +29,7 @@
 
     <div class="footer-wrapper">
         <div class="footer">
-            <p>Амжилт хүсье!</p>
-            <p>2019 он</p>
-            <p>python.noodle.20k at gmail.com</p>
+            2019 он ❤️ python.noodle.20k at gmail.com
         </div>
     </div>
 
