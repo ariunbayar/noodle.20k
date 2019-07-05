@@ -9,7 +9,7 @@ import secure.views
 urlpatterns = [
     path('', issues.views.list, name='issues-list'),
     path('lesson/', lesson.views.list, name='lesson-list'),
-    path('lesson<int:pk>/<str:slug>/', lesson.views.detail, name='lesson-detail'),
+    path('lesson-<int:pk>/<str:slug>/', lesson.views.detail, name='lesson-detail'),
 
     path('admin/entry/', entry.views.list, name='entry-list'),
     path('admin/entry/add/', entry.views.form, name='entry-add'),

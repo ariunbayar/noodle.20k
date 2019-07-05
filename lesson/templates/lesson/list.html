@@ -5,7 +5,7 @@
 <div class="split split3 row-gap">
     {% for post in posts %}
     <a href="{% url "lesson-detail" post.id post.slug %}" class="card">
-        {{ post.title }} | #{{ post.id }}
+        {{ post.title }}
         <div class="footer">
             {{ post.created_at|date }}
         </div>
