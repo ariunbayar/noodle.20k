@@ -6,6 +6,8 @@ from datetime import datetime, timedelta
 
 def list(request):
 
+    return redirect('lesson-list')
+
     Issue = namedtuple('Issue', 'id name cost created_at')
     rand = lambda: random.randint(1, random.randint(1, random.randint(1, 4)))
     randdate = lambda: datetime.now() - timedelta(seconds=random.randint(1, 86400 * 30))
