@@ -26,6 +26,7 @@ ALLOWED_HOSTS = ['*']
 INSTALLED_APPS = [
     'entry.apps.EntryConfig',
     'issues.apps.IssuesConfig',
+    'image.apps.ImageConfig',
     'lesson.apps.LessonConfig',
     'secure.apps.SecureConfig',
     'user.apps.UserConfig',
@@ -115,6 +116,10 @@ USE_TZ = True
 DATETIME_FORMAT = 'Y-m-d H:i'
 DATE_FORMAT = 'Y-m-d'
 TIME_FORMAT = 'H:i'
+
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/image/'
 
 
 # Static files (CSS, JavaScript, Images)

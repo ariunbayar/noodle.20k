@@ -1,0 +1,26 @@
+{% extends "layout_admin.html" %}
+
+{% block "content" %}
+
+<table>
+    <thead>
+        <tr>
+            <th>File</th>
+            <th>Size</th>
+            <th>Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for image in images %}
+        <tr>
+            <td>{{ image.uploaded_file.url }}</td>
+            <td>{{ image.uploaded_file.size }}</td>
+            <td>{{ image.created_at }}</td>
+            <td><a href="#" onclick="return confirm('Are you sure to delete this image?')">remove</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}
