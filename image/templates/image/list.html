@@ -2,6 +2,26 @@
 
 {% block "content" %}
 
+
+<div class="upload_region">
+    <div class="instruction">
+        <p>Click here to upload an image</p>
+        <p>OR</p>
+        <p>Paste on the page to upload</p>
+    </div>
+    <div class="preview">
+        <img src="" id="image_preview"/>
+    </div>
+    <input type="file" id="upload_image"/>
+</div>
+
+<form method="post" action="{% url "image-upload" %}" id="upload_form">
+    {% csrf_token %}
+    <input type="hidden" name="base64_image"/>
+    <input type="submit" class="btn" value="Save image"/>
+
+</form>
+
 <table>
     <thead>
         <tr>
@@ -23,4 +43,55 @@
     </tbody>
 </table>
 
+{% endblock %}
+
+{% block "extra_js" %}
+<script>
+
+(function(){
+
+    function initPaste(onload_callback) {
+
+        document.addEventListener('paste', function(event){
+
+            var items = (event.clipboardData || event.originalEvent.clipboardData).items;
+
+            for (index in items) {
+
+                var item = items[index];
+
+                if (item.kind === 'file') {
+                    var blob = item.getAsFile();
+                    var reader = new FileReader();
+                    reader.onload = onload_callback;
+                    reader.readAsDataURL(blob);
+                }
+
+            }
+        });
+    }
+
+    function initFileSelect(onload_callback) {
+        document.querySelector('#upload_image').addEventListener('change', function(event){
+            var reader = new FileReader();
+            reader.onload = onload_callback;
+            reader.readAsDataURL(event.target.files[0]);
+            event.target.value = '';
+        });
+    }
+
+    function initUploadRegion() {
+        var onload_callback = function(event){
+            document.querySelector('#upload_form input[name="base64_image"]').value = event.target.result;
+            document.querySelector('#image_preview').setAttribute('src', event.target.result);
+            document.querySelector('.upload_region').classList.add('preview');
+        }
+        initPaste(onload_callback);
+        initFileSelect(onload_callback);
+    }
+
+    initUploadRegion();
+
+})();
+</script>
 {% endblock %}

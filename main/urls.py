@@ -1,4 +1,6 @@
 from django.urls import path
+from django.conf import settings
+from django.conf.urls.static import static
 
 import entry.views
 import image.views
@@ -21,7 +23,11 @@ urlpatterns = [
     path('admin/entry/<int:pk>/unpublish/', entry.views.publish_toggle, name='entry-unpublish', kwargs={'is_published': False}),
 
     path('admin/image/', image.views.list, name='image-list'),
+    path('admin/image/upload/', image.views.upload, name='image-upload'),
 
     path('login/', secure.views.login, name='login'),
     path('logout/', secure.views.logout, name='logout'),
 ]
+
+if settings.DEBUG == True:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

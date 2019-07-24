@@ -119,7 +119,7 @@ TIME_FORMAT = 'H:i'
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/image/'
+MEDIA_URL = '/media/'
 
 
 # Static files (CSS, JavaScript, Images)
