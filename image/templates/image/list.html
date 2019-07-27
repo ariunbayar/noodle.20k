@@ -34,14 +34,18 @@
     <tbody>
         {% for image in images %}
         <tr>
-            <td>{{ image.uploaded_file.url }}</td>
+            <td class="click-to-copy">{{ image.uploaded_file.url }}</td>
             <td>{{ image.uploaded_file.size }}</td>
             <td>{{ image.created_at }}</td>
+            <td><a href="{{ image.uploaded_file.url }}" target="_blank">preview</a></td>
             <td><a href="#" onclick="return confirm('Are you sure to delete this image?')">remove</a></td>
         </tr>
         {% endfor %}
     </tbody>
 </table>
+
+<div class="notifications top-right">
+</div>
 
 {% endblock %}
 
@@ -90,7 +94,43 @@
         initFileSelect(onload_callback);
     }
 
+    function initCopy() {
+
+        function hideNotification(e) {
+            e.target.style.display = 'none';
+        }
+
+        document.querySelectorAll(".click-to-copy").forEach(function(el){
+
+            el.addEventListener('click', function(e) {
+
+                window.getSelection().selectAllChildren(e.target);
+
+                var notification = document.createElement('div');
+                notification.classList.add('notification');
+
+                try {
+                    var copy_result = document.execCommand('copy');
+
+                    if (copy_result) {
+                        notification.innerHTML = 'Copied!';
+                    } else {
+                        notification.innerHTML = 'Unable to copy!';
+                    }
+                } catch (err) {
+                    notification.innerHTML = 'Unsupported Browser to copy!';
+                }
+
+                document.querySelector('.notifications').appendChild(notification);
+                notification.addEventListener('click', hideNotification);
+            });
+
+        });
+
+    }
+
     initUploadRegion();
+    initCopy();
 
 })();
 </script>

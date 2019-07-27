@@ -335,3 +335,31 @@ input, textarea{
 
 .upload_region.preview .instruction{ display: none; }
 .upload_region.preview .preview{ display: block; }
+
+
+/**
+ * Notifications
+ */
+.notifications {
+    position: fixed;
+    right: 1em;
+    top: 1em;
+}
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+@keyframes fadeout {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.notification {
+    background-color: rgba(255,255,255,.85);
+    padding: .5em 1em;
+    margin: 4px 0;
+    text-align: right;
+    animation: fadein .7s;
+    border-radius: 2px;
+}
