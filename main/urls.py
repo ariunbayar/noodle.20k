@@ -24,6 +24,7 @@ urlpatterns = [
 
     path('admin/image/', image.views.list, name='image-list'),
     path('admin/image/upload/', image.views.upload, name='image-upload'),
+    path('admin/image/delete/<int:pk>/', image.views.delete, name='image-delete'),
 
     path('login/', secure.views.login, name='login'),
     path('logout/', secure.views.logout, name='logout'),

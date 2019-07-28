@@ -3,7 +3,7 @@ from base64 import b64decode
 
 from django.core.files.base import ContentFile
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.decorators.http import require_GET, require_POST
 
 from .models import Image
@@ -41,5 +41,16 @@ def upload(request):
         img = Image()
         img.uploaded_file.save(filename, data, save=True)
         img.save()
+
+    return redirect('image-list')
+
+
+@require_GET
+@login_required
+def delete(request, pk):
+
+    img = get_object_or_404(Image, pk=pk)
+    img.uploaded_file.delete(save=False)
+    img.delete()
 
     return redirect('image-list')

@@ -37,8 +37,8 @@
             <td class="click-to-copy">{{ image.uploaded_file.url }}</td>
             <td>{{ image.uploaded_file.size }}</td>
             <td>{{ image.created_at }}</td>
-            <td><a href="{{ image.uploaded_file.url }}" target="_blank">preview</a></td>
-            <td><a href="#" onclick="return confirm('Are you sure to delete this image?')">remove</a></td>
+            <td><a href="{{ image.uploaded_file.url }}" target="_blank">view</a></td>
+            <td><a href="{% url "image-delete" image.id %}" onclick="return confirm('Are you sure to delete this image?')">remove</a></td>
         </tr>
         {% endfor %}
     </tbody>
