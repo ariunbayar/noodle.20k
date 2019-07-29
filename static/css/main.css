@@ -278,6 +278,14 @@ pre {
     padding: 1rem;
 }
 
+code {
+    background-color: #212222;
+    color: #dfc48c;
+    border-radius: 4px;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
 
 /**
  * Form
