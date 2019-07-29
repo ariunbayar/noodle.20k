@@ -267,23 +267,26 @@ a.card:nth-last-child(-n+3) {
 /**
  * Code block
  */
-pre {
-    color: #dfc48c;
-    background-color: rgba(0, 0, 0, 0.85);
-    border-radius: 4px;
-    font-size: 1rem;
-    word-spacing: normal;
-    margin: 1rem 0;
-    overflow-x: auto;
-    padding: 1rem;
-}
-
 code {
     background-color: #212222;
     color: #dfc48c;
     border-radius: 4px;
     font-size: 1rem;
     padding: 0 1rem;
+}
+pre {
+    background-color: rgba(0, 0, 0, 0.85);
+    border-radius: 4px;
+    word-spacing: normal;
+    margin: 1rem 0;
+    overflow-x: auto;
+    padding: 1rem;
+    font-size: 1rem;
+}
+pre code{
+    color: #dfc48c;
+    padding: 0;
+    font-size: inherit;
 }
 
 
